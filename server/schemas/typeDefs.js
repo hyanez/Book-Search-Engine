@@ -24,4 +24,14 @@ const typeDefs = gql`
   type Query {
     me: User
   }
+  type Mutation {
+    # login: Accepts an email and password as parameters; returns an Auth type.
+    login(email: String!, password: String!): Auth
+    # addUser: Accepts a username, email, and password as parameters; returns an Auth type.
+    addUser(username: String!, email: String!, password: String!): Auth
+    # saveBook: Accepts a book author's array, description, title, bookId, image, and link as parameters; returns a User type.
+    saveBook(input: savedBook!): User
+    # removeBook: Accepts a book's bookId as a parameter; returns a User type.
+    removeBook(bookId: ID!): User
+  }
 `;
