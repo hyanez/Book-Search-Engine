@@ -44,3 +44,5 @@ const typeDefs = gql`
     authors: [String]
   }
 `;
+
+module.exports = typeDefs;
