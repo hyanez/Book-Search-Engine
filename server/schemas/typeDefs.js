@@ -29,9 +29,18 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     # addUser: Accepts a username, email, and password as parameters; returns an Auth type.
     addUser(username: String!, email: String!, password: String!): Auth
-    # saveBook: Accepts a book author's array, description, title, bookId, image, and link as parameters; returns a User type.
-    saveBook(input: savedBook!): User
+    # saveBook: Accepts an input type with all parameters in saveBook, returns a User type.
+    saveBook(input: saveBook!): User
     # removeBook: Accepts a book's bookId as a parameter; returns a User type.
     removeBook(bookId: ID!): User
+  }
+  # An input type that Accepts a book author's array, description, title, bookId, image, and link as parameters;
+  input saveBook {
+    description: String
+    title: String
+    bookId: String
+    image: String
+    link: String
+    authors: [String]
   }
 `;
